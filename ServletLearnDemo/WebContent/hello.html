@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<form action="HelloWorld" method="GET">
+网址名：<input type="text" name="name"> <br/>
+网址：<input type="text" name="url" />
+<input type="submit" value="提交/产生cookie" />
+</form>
+
+<form action="CheckBox" method="POST" target="_blank">
+<input type="checkbox" name="runoob" checked="checked" /> 菜鸟教程
+<input type="checkbox" name="google"  /> Google
+<input type="checkbox" name="taobao" checked="checked" /> 淘宝
+<input type="submit" value="选择站点/产生并检验Session" />
+</form>
+
+<form action="Errora" method="GET">
+测试错误：<input type="text" name="name"> 
+<input type="submit" value="测试错误" />
+</form>
+
+<form action="DisplayHeader" method="GET">
+Cookie and header：<input type="text" name="name">
+<input type="submit" value="Cookie and header" />
+</form>
+
+<form action="SendEmail" method="POST" enctype="multipart/form-data">
+邮箱密码：<input type="password" name="passwd"> 
+选择一个文件:<input type="file" name="uploadFile" />
+<input type="submit" value="发送测试邮件" />
+</form>
+</body>
+</html>
