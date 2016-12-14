@@ -70,7 +70,7 @@ try {
 	<meta name="title" content="Bootstrap的使用">
 	<meta name="description" content="Bootstrap网页设计">
 	<meta name="keywords" content="bootstrap">
-	<link href="http://cdn.staticfile.org/twitter-bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="v3/layoutit.css" rel="stylesheet">
 	<!--[if lt IE 9]>
 		<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -81,7 +81,7 @@ try {
 	<script type="text/javascript" src="http://cdn.staticfile.org/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="v3/jquery.htmlClean.js"></script>
 
-	<script type="text/javascript" src="http://cdn.staticfile.org/twitter-bootstrap/3.0.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="v3/scripts.min.js"></script>
 </head>
 <body>

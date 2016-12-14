@@ -10,30 +10,30 @@ public class Dbutil {
     private static String username="dbwebproject_root";  
     private static String password="test";  
     private static Connection conn;  
-    //Á¬½ÓÊı¾İ¿âÇ°£¬×°ÔØJDBCÇı¶¯  
+    //è¿æ¥æ•°æ®åº“å‰ï¼Œè£…è½½JDBCé©±åŠ¨  
     static{  
         try{  
-        	//ÊµÏÖjava.sql.Driver ½Ó¿ÚµÄÊµÌåÀà  ´Ë´¦Ê¹ÓÃmysqlÌá¹©µÄÇı¶¯°ü
+        	//å®ç°java.sql.Driver æ¥å£çš„å®ä½“ç±»  æ­¤å¤„ä½¿ç”¨mysqlæä¾›çš„é©±åŠ¨åŒ…
             Class.forName(driverClass);  
         }  
         catch(ClassNotFoundException e){  
             e.printStackTrace();  
         }  
     }
-    //½¨Á¢Êı¾İ¿âÁ¬½Ó  
+    //å»ºç«‹æ•°æ®åº“è¿æ¥  
     public static void main(String[] args){  
         Connection conn=Dbutil.getConnection();  
         if(conn == null){  
-            System.out.println("Êı¾İ¿âÁ¬½ÓÊ§°Ü£¡");  
+            System.out.println("æ•°æ®åº“è¿æ¥å¤±è´¥ï¼");  
         }  
     } 
-    //»ñÈ¡Êı¾İ¿âÁ¬½Ó  
+    //è·å–æ•°æ®åº“è¿æ¥  
     public static Connection getConnection(){  
         try{
         	//jdbc:mysql://127.0.0.1:3306/dbNews?useUnicode=true&characterEncoding=utf-8&useSSL=false
-        	//jdbc:mysql ÓëÊı¾İ¿âÍ¨ĞÅËùÓÃĞ­Òé
-        	//127.0.0.1:3306 Êı¾İ¿âiPºÍ¶Ë¿ÚºÅ
-        	//dbNews ·şÎñÆ÷Ê¹ÓÃµÄÌØ¶¨Êı¾İ¿â
+        	//jdbc:mysql ä¸æ•°æ®åº“é€šä¿¡æ‰€ç”¨åè®®
+        	//127.0.0.1:3306 æ•°æ®åº“iPå’Œç«¯å£å·
+        	//dbNews æœåŠ¡å™¨ä½¿ç”¨çš„ç‰¹å®šæ•°æ®åº“
             conn = (Connection)DriverManager.getConnection(url,username,password); 
         }  
         catch(SQLException e){
@@ -41,7 +41,7 @@ public class Dbutil {
         }  
         return conn;  
     }  
-    //¹Ø±ÕÊı¾İ¿âÁ¬½Ó  
+    //å…³é—­æ•°æ®åº“è¿æ¥  
     public static void Close(){  
         if(conn!=null){  
             try{  
