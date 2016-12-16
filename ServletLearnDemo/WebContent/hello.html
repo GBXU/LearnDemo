@@ -29,7 +29,10 @@ Cookie and header：<input type="text" name="name">
 </form>
 
 <form action="SendEmail" method="POST" enctype="multipart/form-data">
-邮箱密码：<input type="password" name="passwd"> 
+TO邮箱：<input type="text" name="TO"> 
+FROM邮箱：<input type="text" name="FROM"> 
+邮箱密码：<input type="password" name="PW"> 
+FROM邮箱主机：<input type="text" name="HOST"> 
 选择一个文件:<input type="file" name="uploadFile" />
 <input type="submit" value="发送测试邮件" />
 </form>

@@ -68,6 +68,9 @@ public class SendEmail extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String from_passwd = null;
+		String from = null;
+		String to = null;
+		String host = null;
 		/******************upload**********************/
 		// 检测是否为多媒体上传
 		if (!ServletFileUpload.isMultipartContent(request)) {
@@ -116,8 +119,17 @@ public class SendEmail extends HttpServlet {
 	                }else {
 	                	//因为enctype="multipart/form-data"把表单全部转化为字节流
 	                	//所以getParameter()无法正常使用
-	                	if(item.getFieldName().compareTo("passwd")==0){
+	                	if(item.getFieldName().compareTo("PW")==0){
 	                		from_passwd = item.getString();
+	                	}
+	                	if(item.getFieldName().compareTo("TO")==0){
+	                		to = item.getString();
+	                	}
+	                	if(item.getFieldName().compareTo("FROM")==0){
+	                		from = item.getString();
+	                	}
+	                	if(item.getFieldName().compareTo("HOST")==0){
+	                		host = item.getString();
 	                	}
 					}
 	            }
@@ -130,15 +142,13 @@ public class SendEmail extends HttpServlet {
 	    //getServletContext().getRequestDispatcher("/message.jsp").forward(request, response);
 	    /******************email**********************/
 		// 收件人的电子邮件 ID
-		String to = "932739864@qq.com";
-				//request.getParameter("email");
-		// 发件人的电子邮件 ID
-		String from = "2014141462281@stu.scu.edu.cn";
+//		String to = "@qq.com";
+//		
+//		// 发件人的电子邮件 ID
+//		String from = "";
+//		// 假设您是从本地主机发送电子邮件
+//		String host = "mail.";
 		
-		
-		System.out.println(from_passwd);
-		// 假设您是从本地主机发送电子邮件
-		String host = "mail.scu.edu.cn";
 		// 获取主机的属性
 		Properties properties =new Properties();
 		properties.setProperty("mail.debug", "true");// 开启debug调试
@@ -160,7 +170,7 @@ public class SendEmail extends HttpServlet {
 			// 设置 To: header field of the header.
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 			// 设置 Subject: header field
-			message.setSubject("This is the Subject Line!");
+			message.setSubject("Subject");
 			// 创建消息部分 
 			BodyPart messageBodyPart = new MimeBodyPart();
 			// 填写消息
@@ -174,10 +184,9 @@ public class SendEmail extends HttpServlet {
  
 			// 第二部分是附件
 			messageBodyPart = new MimeBodyPart();
-			String filename = fileName;
 			DataSource source = new FileDataSource(filePath);
 			messageBodyPart.setDataHandler(new DataHandler(source));
-			messageBodyPart.setFileName(filename);
+			messageBodyPart.setFileName(fileName);
 			multipart.addBodyPart(messageBodyPart);
 			
 			// 发送完整的消息部分
