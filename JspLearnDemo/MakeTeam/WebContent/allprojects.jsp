@@ -16,10 +16,10 @@
 %>
 <%
 	List<ProjectBean> projectList = new ArrayList<ProjectBean>();
-try {
-            Connection con=(Connection) Dbutil.getConnection();  
+	try {
+            Connection con=(Connection) Dbutil.getConnection();//连接
             Statement stmt=(Statement) con.createStatement();//句柄
-            String prosSql="SELECT projectid,projectname,status FROM project";//单引号坑死我了
+            String prosSql="SELECT projectid,projectname,status FROM project";//sql语句
 	        ResultSet prosRs=stmt.executeQuery(prosSql);  
 	        while(prosRs.next()) {
 	    		ProjectBean pro= new ProjectBean();

@@ -44,6 +44,7 @@ public class Accept extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String projectid = request.getParameter("projectid");
 		HttpSession session = request.getSession(true);
+		String applicant = request.getParameter("applicant");
 		UserBean user = (UserBean)session.getAttribute("user");
 		if(user==null){
 			getServletContext().getRequestDispatcher("/allprojects.jsp").forward(request, response);
@@ -53,13 +54,13 @@ public class Accept extends HttpServlet {
             String sql="insert into member(projectid,userid) values(?,?)";
             PreparedStatement stmt=con.prepareStatement(sql);
             stmt.setInt(1, Integer.valueOf(projectid));
-            stmt.setInt(2,user.getUserId());
+            stmt.setInt(2,Integer.valueOf(applicant));
             int rs=stmt.executeUpdate();
             
             String sql1="delete from application where projectid=? and userid=? ";
             PreparedStatement stmt1=con.prepareStatement(sql1);
             stmt1.setInt(1, Integer.valueOf(projectid));
-            stmt1.setInt(2,user.getUserId());
+            stmt1.setInt(2,Integer.valueOf(applicant));
             int rs1=stmt1.executeUpdate();
         }  
         catch(Exception ex) {  

@@ -121,6 +121,7 @@ try {
 											<td>
 												<form role="form" action="Accept" method="post">
 													<input type="hidden" value=<%=project.getmProjectId() %> name="projectid" >
+													<input type="hidden" value=<%=item.getUserId()%> name=applicant >
 													<button type="submit" class="btn btn-primary btn-default">同意</button>
 												</form>												
 											</td>
