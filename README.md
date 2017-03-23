@@ -2,18 +2,18 @@
 LIFE AS A CS STUDENT
 
 
-##JavaLearnDemo
+## JavaLearnDemo
 
 it is about the basis Java programing
 
-##ServletLearnDemo
+## ServletLearnDemo
 
 it is a project using the Servlet to send a e-mail with one file you can chosen.
 
-##JspLearnDemo
+## JspLearnDemo
 
 to build a website for the course of database.
 
-##SpringDemo
+## SpringDemo
 
 try to construct a SpringMVC
