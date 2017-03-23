@@ -1,5 +1,5 @@
 # LearnDemo
->LIFE AS A CS STUDENT
+LIFE AS A CS STUDENT
 
 
 ##JavaLearnDemo
