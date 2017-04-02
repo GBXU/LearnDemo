@@ -15,4 +15,10 @@ to build a website for the course of database.
 try to construct a SpringMVC
 
 ## ShellDemo
-it is a ShellScript file. i find that the Shell is similar to the terminal command(Linux) 
+it is a ShellScript file. i find that the Shell is similar to the terminal command(Linux)
+
+## ShellDemo
+网络数据挖掘 第三次作业 Java实现： 简单文本检索 倒排文件索引+布尔查询。考虑可能的优化：
+
+* 布尔查询的顺序
+* PageRank：如减少停用词的权重
