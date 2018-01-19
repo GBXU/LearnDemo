@@ -1,0 +1,16 @@
+https://stackoverflow.com/questions/9395207/how-to-include-jar-files-with-java-file-and-compile-in-command-prompt
+
+编译test helloworld需要
+javac Main.java
+然后运行cd 到bin 运行要cd到包的上一层目录
+java com/exam/main/Main
+
+在Demo目录 编译
+javac -cp .:libs/* src/com/exam/main/*.java
+
+运行cd 到bin
+java -cp .:../libs/* com.exam.main.Main 
+
+=====================================
+
+

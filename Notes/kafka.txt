@@ -1,0 +1,74 @@
+【启动zookeeper】三台
+./zkServer.sh start  
+./zkServer.sh status
+./zkServer.sh restart
+【启动kafka】三台
+nohup ./kafka-server-start.sh -daemon ../config/server.properties >/dev/null 2>&1 & 
+./kafka-server-stop.sh
+新建主题 replication不能超过broker，partition无所谓
+./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic test
+查看主题
+./kafka-topics.sh --list --zookeeper node14:2181
+主题详情
+./kafka-topics.sh --describe --zookeeper node14:2181 --topic test
+发布者
+./kafka-console-producer.sh --broker-list node14:9092 --topic test
+消费者
+./kafka-console-consumer.sh --bootstrap-server node14:9092 --topic test --from-beginning
+删除主题
+./kafka-topics.sh --zookeeper node14:2181,node15:2181,node16:2181 --delete --topic "test"
+
+http://blog.csdn.net/u010003835/article/details/53071882
+【配置zookeeper 2181】
+https://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance
+
+https://www.cnblogs.com/luotianshuai/p/5206662.html 【重要】
+
+【配置kafka 9092】
+https://kafka.apache.org/quickstart
+https://www.cnblogs.com/luotianshuai/p/5206662.html
+【warning】没有配置下面这句 
+listeners = PLAINTEXT://node14:9092
+
+https://www.cnblogs.com/subendong/p/7786547.html
+
+【还出错】
+这是因为你的配置文件中的PLAINTEXT跟你请求的内容不同。举例来说，我在配置文件里配置的listeners=PLAINTEXT://10.127.96.151:9092，但是我想测试的时候请求的是./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic1 --from-beginning
+
+正确的应该是./kafka-console-consumer.sh --bootstrap-server 10.127.96.151:9092 --topic topic1 --from-beginning 【都更改node14】
+
+http://blog.csdn.net/getyouwant/article/details/79000524
+
+【java client project】
+之后java client的时候，用maven配置project以为更方便，没想到它的maven缺少了个log4j的jar包，运行出错又没有说是这个包的问题。在国外论坛看到别人说创建java project把包一个个放进去可以用，才发现有warning提示这个log4j。
+** 现在还在找maven的解决方案。给我气的啊
+【terminal运行出错】
+javac -cp .:/libs/* src/com/exam/main/Main.java
+java -cp .:/libs/* bin/com/exam/main/Main 
+
+【maven配置】
+未解决
+
+【java client代码】
+http://blog.csdn.net/xj626852095/article/details/51711076
+http://orchome.com/303
+
+【kafka performance 脚本使用】
+http://blog.csdn.net/luoww1/article/details/70839727
+https://github.com/GBXU/LearnDemo/blob/master/ShellDemo/test.sh
+【topics创建出错】
+为主题生产/消费消息时，用node14，node15都可以，但是node16时候报test1=LEADER_NOT_AVAILABLE错误，此时	Leader: 14	Replicas: 16,14,15	Isr: 14,15
+但是改成node14 node15 却没有问题
+原因肯定在node16上
+查配置文件，发现所有node的zoo.cfg中 server把node16写成ndoe16,改正。
+
+【仍然接不上node16】
+把所有zookeeper和kafka关闭，先启动所有zookeeper发现正常，再启动kafka的node16，查看主题没问题，producer发现有问题，根据error信息，是接不上node16，再启动node14，查看主题没问题，producer出现error是no route to host。检查sudo firewall-cmd --state  果然node16防火墙还在，node14 node15都关了..
+关闭防火墙 sudo systemctl stop firewalld.service
+sudo systemctl disable firewalld.service
+参考：http://blog.csdn.net/doctor_who2004/article/details/39567289
+
+【测试教程】
+http://blog.csdn.net/luoww1/article/details/70839727
+
+https://www.cnblogs.com/xiaodf/p/6023531.html 【重要】
