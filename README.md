@@ -25,3 +25,6 @@ it is a ShellScript file. i find that the Shell is similar to the terminal comma
 
 ## Pytest
 Python循环、条件判断等简单语法，面向对象、函数式编程等特性还未理解。参照[廖雪峰的Python 2.7教程](http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000)
+
+## Notes
+在实验室用到的一些脚本，git同步，方便远程使用。
