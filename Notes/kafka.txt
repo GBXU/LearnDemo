@@ -1,4 +1,4 @@
-# kafka介绍
+# kafka介绍 ppt
 
 【启动zookeeper】三台
 ./zkServer.sh start
