@@ -1,3 +1,5 @@
+# kafka介绍
+
 【启动zookeeper】三台
 ./zkServer.sh start
 ./zkServer.sh status
@@ -74,6 +76,9 @@ http://blog.csdn.net/u013970991/article/details/52061794
 https://www.cnblogs.com/xiaodf/p/6023531.html 【重要】
 
 https://www.zybuluo.com/mdeditor#1023048-full-reader
+
+官方教程
+https://engineering.linkedin.com/kafka/benchmarking-apache-kafka-2-million-writes-second-three-cheap-machines
 
 【调整jvm大小】
 配置kafka /config/server.properties 文件
