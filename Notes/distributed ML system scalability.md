@@ -1,6 +1,9 @@
 # distributed ML system scalability
-`conference ranking`  `arXiv/achieve`
+[conference ranking](!http://www.conferenceranks.com/#data)
+
+[arXiv/achieve](!https://arxiv.org/find/all/1/all:+AND+scalability+AND+system+AND+distributed+ML/0/1/0/all/0/1)
 
 ---
-五篇文章
+5 papers
+
 #
