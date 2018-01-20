@@ -1,9 +1,9 @@
 【启动zookeeper】三台
-./zkServer.sh start  
+./zkServer.sh start
 ./zkServer.sh status
 ./zkServer.sh restart
 【启动kafka】三台
-nohup ./kafka-server-start.sh -daemon ../config/server.properties >/dev/null 2>&1 & 
+nohup ./kafka-server-start.sh -daemon ../config/server.properties >/dev/null 2>&1 &
 ./kafka-server-stop.sh
 新建主题 replication不能超过broker，partition无所谓
 ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic test
@@ -27,7 +27,7 @@ https://www.cnblogs.com/luotianshuai/p/5206662.html 【重要】
 【配置kafka 9092】
 https://kafka.apache.org/quickstart
 https://www.cnblogs.com/luotianshuai/p/5206662.html
-【warning】没有配置下面这句 
+【warning】没有配置下面这句
 listeners = PLAINTEXT://node14:9092
 
 https://www.cnblogs.com/subendong/p/7786547.html
@@ -44,7 +44,7 @@ http://blog.csdn.net/getyouwant/article/details/79000524
 ** 现在还在找maven的解决方案。给我气的啊
 【terminal运行出错】
 javac -cp .:/libs/* src/com/exam/main/Main.java
-java -cp .:/libs/* bin/com/exam/main/Main 
+java -cp .:/libs/* bin/com/exam/main/Main
 
 【maven配置】
 未解决
@@ -70,5 +70,12 @@ sudo systemctl disable firewalld.service
 
 【测试教程】
 http://blog.csdn.net/luoww1/article/details/70839727
-
+http://blog.csdn.net/u013970991/article/details/52061794
 https://www.cnblogs.com/xiaodf/p/6023531.html 【重要】
+
+https://www.zybuluo.com/mdeditor#1023048-full-reader
+
+【调整jvm大小】
+配置kafka /config/server.properties 文件
+本地 KAFKA_HEAP_OPT="-Xmx2G"
+sogon KAFKA_HEAP_OPT="-Xmx30G"

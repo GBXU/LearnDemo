@@ -14,7 +14,7 @@ if [ "$ZooFlag" == "" ]
 then
   echo "starting up zookeeper"
   cd $ZPATH/bin
-  echo "`nohup ./zkServer.sh start  >/dev/null 2>&1 &`"
+  echo "`./zkServer.sh start`"
 else
   echo "zookeeper started"
 fi
@@ -47,7 +47,7 @@ echo "test the producer performance:"
 # record size 增加， latency 吞吐num和size的影响
 echo "record size -> "
 echo "label 1 bytes:"
-./kafka-producer-perf-test.sh --num-records 500000000 --record-size 1  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test"
+./kafka-producer-perf-test.sh --num-records 1000000 --record-size 1  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test" |grep "1000000 records sent"
 echo "label 64 bytes:"
 ./kafka-producer-perf-test.sh --num-records 500000000 --record-size 64  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test"
 echo "label 128 bytes:"
@@ -55,9 +55,9 @@ echo "label 128 bytes:"
 echo "label 256 bytes:"
 ./kafka-producer-perf-test.sh --num-records 500000000 --record-size 256  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test"
 echo "label 512 bytes:"
-./kafka-producer-perf-test.sh --num-records 500000000 --record-size 512  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test"
+./kafka-producer-perf-test.sh --num-records 1000000 --record-size 512  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test"
 echo "label 1024 bytes:"
-./kafka-producer-perf-test.sh --num-records 500000000 --record-size 1024  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test"
+./kafka-producer-perf-test.sh --num-records 1000000 --record-size 1024  --throughput 1000000000 --producer-props bootstrap.servers=node14:9092,node15:9092,node16:9092 --topic "test"|grep "50000000 records sent"
 
 # throughput 增加， latency 吞吐num和size的影响
 echo "throughput -> "
