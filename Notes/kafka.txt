@@ -1,11 +1,3 @@
-host
-ip node1
-ip node2
-ip node3
-
-/opt/zookeeper/zkdata/myid  1 2 3
-/opt/kafka/kafka_2.11-1.0.0/config/server.properties  broker  1 2 3
-
 # kafka介绍 ppt
 
 【启动zookeeper】三台
