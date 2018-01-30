@@ -1,0 +1,31 @@
+1dc:
+us-east:
+us-west:
+eu:        7327e3d181f558ac53b84178b8763bf5
+brazil:    7327e3d181f558ac53b84178b8763bf5
+singapore: 7327e3d181f558ac53b84178b8763bf5
+2dc:
+us-east:
+us-west:   
+eu:        f087d3f0de828fd3adf7843c4a9d0b4e
+brazil:    f087d3f0de828fd3adf7843c4a9d0b4e
+singapore: 
+3dc:
+us-east:   e597777c6e46f5954dd83fc694659f3f
+us-west:   e597777c6e46f5954dd83fc694659f3f
+eu:        e597777c6e46f5954dd83fc694659f3f
+brazil:    e597777c6e46f5954dd83fc694659f3f
+singapore: 
+4dc:
+us-east:   4d9f26772feb9199850a31458d13a5dc
+us-west:   4d9f26772feb9199850a31458d13a5dc
+eu:        4d9f26772feb9199850a31458d13a5dc
+brazil:    4d9f26772feb9199850a31458d13a5dc
+singapore: 
+5dc:
+us-east:   59707c032c9059e75a01918f1857bf51
+us-west:   59707c032c9059e75a01918f1857bf51
+eu:        59707c032c9059e75a01918f1857bf51
+brazil:    59707c032c9059e75a01918f1857bf51
+singapore:
+

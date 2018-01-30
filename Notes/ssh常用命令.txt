@@ -14,6 +14,8 @@ ssh-copy-id -i id_rsa.pub -p 60014 xugb@node14
 scp authorized_keys node15:/home/xugb/.ssh/
 上传到服务器：
 scp -P 60014 ~/Desktop/tmp.txt  xugb@node14:/home/xugb/
+scp -i Kafka2018.pem /home/gbxu/Downloads/jdk-8u161-linux-x64.tar.gz ubuntu@ec2-52-79-92-202.ap-northeast-2.compute.amazonaws.com:/home/ubuntu/
+
 服务器下载回本地：
 scp -P 60014 xugb@node14:/home/xugb/tmp.txt /home/gbxu/Downloads/
 

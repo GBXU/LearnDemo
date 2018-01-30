@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataCenters dcNum='4'>
+  <dataCenter RemotecdIP='ec2-107-20-53-208.compute-1.amazonaws.com' cdPort='60000' cdIP='ec2-107-20-53-208.compute-1.amazonaws.com' RemotecdPort='60001'>
+    <storageShims ssNum='1'>
+      <storageShim ssIP='ec2-23-20-114-181.compute-1.amazonaws.com' ssPort='60002'/>
+    </storageShims>
+    <webProxies wpNum='1'>
+      <webproxy wpPort='60003' wpIP='ec2-184-73-29-242.compute-1.amazonaws.com'/>
+    </webProxies>
+  </dataCenter>
+  <dataCenter RemotecdIP='ec2-204-236-164-164.us-west-1.compute.amazonaws.com' cdPort='60005' cdIP='ec2-204-236-164-164.us-west-1.compute.amazonaws.com' RemotecdPort='60006'>
+    <storageShims ssNum='1'>
+      <storageShim ssIP='ec2-204-236-140-250.us-west-1.compute.amazonaws.com' ssPort='60007'/>
+    </storageShims>
+    <webProxies wpNum='1'>
+      <webproxy wpPort='60008' wpIP='ec2-184-72-26-160.us-west-1.compute.amazonaws.com'/>
+    </webProxies>
+  </dataCenter>
+  <dataCenter RemotecdIP='ec2-46-137-41-155.eu-west-1.compute.amazonaws.com' cdPort='60010' cdIP='ec2-46-137-41-155.eu-west-1.compute.amazonaws.com' RemotecdPort='60011'>
+    <storageShims ssNum='1'>
+      <storageShim ssIP='ec2-79-125-46-60.eu-west-1.compute.amazonaws.com' ssPort='60012'/>
+    </storageShims>
+    <webProxies wpNum='1'>
+      <webproxy wpPort='60013' wpIP='ec2-46-51-161-125.eu-west-1.compute.amazonaws.com'/>
+    </webProxies>
+  </dataCenter>
+  <dataCenter RemotecdIP='ec2-177-71-143-163.sa-east-1.compute.amazonaws.com' cdPort='60015' cdIP='ec2-177-71-143-163.sa-east-1.compute.amazonaws.com' RemotecdPort='60016'>
+    <storageShims ssNum='1'>
+      <storageShim ssIP='ec2-177-71-166-19.sa-east-1.compute.amazonaws.com' ssPort='60017'/>
+    </storageShims>
+    <webProxies wpNum='1'>
+      <webproxy wpPort='60018' wpIP='ec2-177-71-163-250.sa-east-1.compute.amazonaws.com'/>
+    </webProxies>
+  </dataCenter>
+</dataCenters>
