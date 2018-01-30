@@ -1,0 +1,5 @@
+#key nodeip user password keypair
+zookeeper thor01.mpi-sws.org chengli xxxxx /home/chengli/.ssh/id_rsa
+proxy-0 thor42.mpi-sws.org chengli xxxxx /home/chengli/.ssh/id_rsa
+user-0 thor44.mpi-sws.org chengli xxxxx /home/chengli/.ssh/id_rsa
+database-0 thor46.mpi-sws.org chengli xxxxx /home/chengli/.ssh/id_rsa

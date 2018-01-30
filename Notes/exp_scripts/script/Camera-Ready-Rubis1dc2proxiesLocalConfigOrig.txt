@@ -1,0 +1,10 @@
+blueToken 10000000
+expiredTime 10000000000000
+bluequietTime 100000000
+userNumList 1 6
+dcId 0
+proxy 2
+dbNum 1
+user 2
+userProxy 0 0 0
+userProxy 1 0 1

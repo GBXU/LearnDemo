@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataCenters dcNum='1'>
+  <dataCenter RemotecdIP='thor40.mpi-sws.org' cdPort='60000' cdIP='thor40.mpi-sws.org' RemotecdPort='60001'>
+    <storageShims ssNum='1'>
+      <storageShim ssIP='thor41.mpi-sws.org' ssPort='60002'/>
+    </storageShims>
+    <webProxies wpNum='2'>
+      <webproxy wpPort='60003' wpIP='thor42.mpi-sws.org'/>
+      <webproxy wpPort='60004' wpIP='thor43.mpi-sws.org'/>
+    </webProxies>
+  </dataCenter>
+</dataCenters>
