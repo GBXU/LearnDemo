@@ -10,6 +10,9 @@ ssh node14
 ssh-copy-id -i id_rsa.pub xugb@node15
 ssh-copy-id -i id_rsa.pub -p 60014 xugb@node14
 
+登录失败可能是hosts有问题，删除即可
+ssh-keygen -f "/home/gbxu/.ssh/known_hosts" -R gpu3
+
 跨机器复制文件：
 scp authorized_keys node15:/home/xugb/.ssh/
 上传到服务器：

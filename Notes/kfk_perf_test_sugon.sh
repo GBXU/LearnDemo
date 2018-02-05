@@ -1,7 +1,7 @@
 #!/bin/bash
 #--------------------------------------------
-# author:xugb
-# email:xu.gb@outlook.com
+# author:gb.xu
+# email:gb.xu@outlook.com
 #--------------------------------------------
 ZPATH=/home/xugb/software/zookeeper/zookeeper-3.4.11
 KPATH=/home/xugb/software/kafka/kafka_2.11-1.0.0

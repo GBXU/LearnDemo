@@ -17,3 +17,7 @@ sudo fdisk -l
 lsblk
 
 
+3 创建用户
+adduser gbxu
+passwd
+userdel gbxu 
