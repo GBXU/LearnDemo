@@ -1,5 +1,0 @@
-#key nodeip user password keypair
-zookeeper xxx admin xxxxx /home/chengli/vasco_eval/vasco_eu_frankfurt.pem
-proxy-0 54.93.107.223 admin xxxxx /home/chengli/vasco_eval/vasco_eu_frankfurt.pem
-user-0 54.93.109.150 admin xxxxx /home/chengli/vasco_eval/vasco_eu_frankfurt.pem
-database-0 54.93.102.214 admin xxxxx /home/chengli/vasco_eval/vasco_eu_frankfurt.pem
