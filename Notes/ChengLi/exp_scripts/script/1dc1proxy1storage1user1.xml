@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataCenters dcNum='1'>
+  <dataCenter RemotecdIP='ec2-54-93-63-67.eu-central-1.compute.amazonaws.com' cdPort='60000' cdIP='ec2-54-93-63-67.eu-central-1.compute.amazonaws.com' RemotecdPort='60001'>
+    <storageShims ssNum='1'>
+      <storageShim ssIP='ec2-54-93-63-126.eu-central-1.compute.amazonaws.com' ssPort='60002'/>
+    </storageShims>
+    <webProxies wpNum='1'>
+      <webproxy wpPort='60003' wpIP='ec2-54-93-63-203.eu-central-1.compute.amazonaws.com'/>
+    </webProxies>
+  </dataCenter>
+</dataCenters>

@@ -1,0 +1,6 @@
+scp -i ~/vasco_eval/vasco_eu_frankfurt.pem *.config admin@ec2-52-59-251-62.eu-central-1.compute.amazonaws.com:/var/tmp/admin/config
+scp -i ~/vasco_eval/vasco_eu_frankfurt.pem *.config admin@ec2-52-59-251-75.eu-central-1.compute.amazonaws.com:/var/tmp/admin/config
+scp -i ~/vasco_eval/vasco_us_est_virginia.pem *.config admin@ec2-54-172-167-50.compute-1.amazonaws.com:/var/tmp/admin/config
+scp -i ~/vasco_eval/vasco_us_est_virginia.pem *.config admin@ec2-54-175-67-215.compute-1.amazonaws.com:/var/tmp/admin/config
+scp -i ~/vasco_eval/vasco_us_west_california.pem *.config admin@ec2-52-53-241-119.us-west-1.compute.amazonaws.com:/var/tmp/admin/config
+scp -i ~/vasco_eval/vasco_us_west_california.pem *.config admin@ec2-52-53-232-50.us-west-1.compute.amazonaws.com:/var/tmp/admin/config
