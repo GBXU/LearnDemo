@@ -1,0 +1,50 @@
+kafka-consumer-perf-test.sh 
+Missing required argument "[topic]"
+Option                                   Description
+------                                   -----------
+--broker-list <String: host>             REQUIRED (unless old consumer is
+                                           used): A broker list to use for
+                                           connecting if using the new consumer.
+--consumer.config <String: config file>  Consumer config properties file.
+--date-format <String: date format>      The date format to use for formatting
+                                           the time field. See java.text.
+                                           SimpleDateFormat for options.
+                                           (default: yyyy-MM-dd HH:mm:ss:SSS)
+--fetch-size <Integer: size>             The amount of data to fetch in a
+                                           single request. (default: 1048576)
+--from-latest                            If the consumer does not already have
+                                           an established offset to consume
+                                           from, start with the latest message
+                                           present in the log rather than the
+                                           earliest message.
+--group <String: gid>                    The group id to consume on. (default:
+                                           perf-consumer-98476)
+--help                                   Print usage.
+--hide-header                            If set, skips printing the header for
+                                           the stats
+--messages <Long: count>                 REQUIRED: The number of messages to
+                                           send or consume
+--new-consumer                           Use the new consumer implementation.
+                                           This is the default, so this option
+                                           is deprecated and will be removed in
+                                           a future release.
+--num-fetch-threads <Integer: count>     Number of fetcher threads. (default: 1)
+--print-metrics                          Print out the metrics. This only
+                                           applies to new consumer.
+--reporting-interval <Integer:           Interval in milliseconds at which to
+  interval_ms>                             print progress info. (default: 5000)
+--show-detailed-stats                    If set, stats are reported for each
+                                           reporting interval as configured by
+                                           reporting-interval
+--socket-buffer-size <Integer: size>     The size of the tcp RECV size.
+                                           (default: 2097152)
+--threads <Integer: count>               Number of processing threads.
+                                           (default: 10)
+--topic <String: topic>                  REQUIRED: The topic to consume from.
+--zookeeper <String: urls>               REQUIRED (only when using old
+                                           consumer): The connection string for
+                                           the zookeeper connection in the form
+                                           host:port. Multiple URLS can be
+                                           given to allow fail-over. This
+                                           option is only used with the old
+                                           consumer.
