@@ -49,6 +49,7 @@ zookeeper的配置要求参考[这处文档](https://zookeeper.apache.org/doc/cu
 nohup ./kafka-server-start.sh -daemon ../config/server.properties >/dev/null 2>&1 &
 ./kafka-server-stop.sh
 ```
+* jps：jps命令可以查看当前java进程
 
 ### 基本操作
 * 新建主题:创建的时候replication不能超过broker，partition无所谓
