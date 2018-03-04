@@ -93,6 +93,7 @@ nohup ./kafka-server-start.sh -daemon ../config/server.properties >/dev/null 2>&
   * http://blog.csdn.net/luoww1/article/details/70839727
   * http://blog.csdn.net/u013970991/article/details/52061794
   * https://www.cnblogs.com/xiaodf/p/6023531.html 【\*】
+  * http://www.jasongj.com/2015/12/31/KafkaColumn5_kafka_benchmark/ 【\*】
 
 * 测试中可能需要调整jvm大小
 >配置kafka /config/server.properties 文件

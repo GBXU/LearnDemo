@@ -53,5 +53,5 @@ compression.type=none
 ########
 
 8 bytes overhead for timestamp
-compression throughput大 lantecy也大
+compression throughput大 latency也大
 compression最好增加user thread
