@@ -1,0 +1,33 @@
+# kafka-producer-perf-test.sh
+
+## 需要备份
+
+受NIC影响， 三台机器都运行一个producer
+## 不需要备份
+三台机器都运行若干个producer
+./kafka-topics.sh \
+--create --zookeeper \
+localhost:2181 \
+--replication-factor 3 \
+--partitions 3 \
+--topic "test-1-1-50mil"
+
+
+nohup ./kafka-producer-perf-test.sh \
+--topic TOPIC \
+--num-records 50000000 \
+--record-size 128 \
+--throughput 50000000 \
+--producer-props \
+bootstrap.servers=node1:9092,node2:9092,node3:9092 \
+acks=0 \
+compression.type=none \
+>/home/ubuntu/test-1-1-50mil.log 2>&1 &
+
+#################
+
+8 bytes overhead for timestamp
+compression throughput大 lantecy也大
+
+
+compression最好增加user thread
