@@ -13,17 +13,19 @@ KfkFlag="`echo "$JPS"|grep Kafka`"
 
 if [ "$ZooFlag" == "" ]
 then
-  echo "starting up zookeeper"
   cd $ZPATH/bin
-  echo "`./zkServer.sh start`"
+  echo "`./zkServer.sh start >/dev/null 2>&1`"
+  echo "zookeeper started 1"
 else
-  ZooErrorCheck="`./app/zookeeper/zookeeper-3.4.11/bin/zkServer.sh status`"
+  cd $ZPATH/bin
+  ZooErrorCheck="`./zkServer.sh status`"
   ZooError="`echo "$ZooErrorCheck"|grep Error`"
-  if ["$ZooError" == ""]; then
-    echo "zookeeper started"
+  if ["$ZooError" == ""]
+  then
+    echo "zookeeper started 2"
   else
-    echo "`./app/zookeeper/zookeeper-3.4.11/bin/zkServer.sh restart`"
-    echo "zookeeper started"
+    echo "`./zkServer.sh restart >/dev/null 2>&1`"
+    echo "zookeeper started 3"
   fi
 fi
 

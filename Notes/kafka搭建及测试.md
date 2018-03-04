@@ -92,16 +92,17 @@ nohup ./kafka-server-start.sh -daemon ../config/server.properties >/dev/null 2>&
   * http://blog.csdn.net/luoww1/article/details/70839727
   * http://blog.csdn.net/luoww1/article/details/70839727
   * http://blog.csdn.net/u013970991/article/details/52061794
-  * https://www.cnblogs.com/xiaodf/p/6023531.html
-  * https://www.zybuluo.com/mdeditor#1023048-full-reader
+  * https://www.cnblogs.com/xiaodf/p/6023531.html 【\*】
 
 * 测试中可能需要调整jvm大小
 >配置kafka /config/server.properties 文件
 本地 KAFKA_HEAP_OPT="-Xmx2G"
 sogon KAFKA_HEAP_OPT="-Xmx30G"
 
+
 ### producer
-根据[这封邮件](https://mail-archives.apache.org/mod_mbox/kafka-users/201601.mbox/%3CCAE1jLMMb=NnRRfY9aynNNwy5uwffi8xKfr9TrtvBqG2J50exAQ@mail.gmail.com%3E)，得知kafka 0.9之后，不支持thread的配置，而需要multi process来运行。
+* 根据[这封邮件](https://mail-archives.apache.org/mod_mbox/kafka-users/201601.mbox/%3CCAE1jLMMb=NnRRfY9aynNNwy5uwffi8xKfr9TrtvBqG2J50exAQ@mail.gmail.com%3E)，得知kafka 0.9之后，不支持thread的配置，而需要multi process来运行。
+* 在AWS测试，出现存储不够的问题，重新买机器,8g变为16g，再跑。可以`df -h`查看目前存储情况。要考虑`50000000*128/1024/1024/1024 = 5.96 G`每次测试产生的数据量。
 
 ### consumer
 
