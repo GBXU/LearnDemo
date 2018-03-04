@@ -3,7 +3,7 @@
 
 思路：node1 生产， node2 消费
 猜测：
-线程增加，吞吐率增加
+线程增加，吞吐量增加
 增加broker的个数，吞吐量增加
 
 分区数越多，单线程生产者吞吐率越小。
@@ -26,11 +26,11 @@
 localhost:2181 \
 --replication-factor 1 \
 --partitions 3 \
---topic "test-1-3-50mil-006"
+--topic "test-1-3-50mil-007"
 
 ### 三台机器都运行1个producer
 ./kafka-producer-perf-test.sh \
---topic "test-1-3-50mil-006" \
+--topic "test-1-3-50mil-007" \
 --num-records 50000000 \
 --record-size 128 \
 --throughput 50000000 \
@@ -42,11 +42,11 @@ compression.type=none
 ### 一台机器运行consumer
 ./kafka-consumer-perf-test.sh \
 --broker-list node1:9092,node2:9092,node3:9092 \
---messages 50000000 \
+--messages 150000000 \
 --num-fetch-threads 1 \
 --fetch-size 1048576 \
 --threads 10 \
---topic "test-1-3-50mil-006"
+--topic "test-1-3-50mil-007"
 
 
 
