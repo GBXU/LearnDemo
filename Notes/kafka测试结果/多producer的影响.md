@@ -6,6 +6,7 @@ m4.2xlarge
 
 最大带宽 (Mbps) 1000
 最大吞吐量 (MB/s，128 KB I/O) 125
+参考[文档](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ebs-ec2-config.html)
 ---
 
 1 producer 1consumer  test-1-3-50mil
