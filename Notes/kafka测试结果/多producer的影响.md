@@ -1,4 +1,11 @@
+m4.2xlarge
+(26 ECU,
+  8 vCPU, 2.4 GHz, Intel Xeon E5-2676v3,
+  32 GiB 内存,
+  仅限于 EBS)
 
+最大带宽 (Mbps) 1000
+最大吞吐量 (MB/s，128 KB I/O) 125
 ---
 
 1 producer 1consumer  test-1-3-50mil
