@@ -25,12 +25,12 @@
 --create --zookeeper \
 localhost:2181 \
 --replication-factor 1 \
---partitions 3 \
---topic "test-1-3-50mil-007"
+--partitions 6 \
+--topic "test-1-6-50mil-010"
 
 ### 三台机器都运行1个producer
 ./kafka-producer-perf-test.sh \
---topic "test-1-3-50mil-007" \
+--topic "test-1-6-50mil-010" \
 --num-records 50000000 \
 --record-size 128 \
 --throughput 50000000 \
@@ -46,7 +46,7 @@ compression.type=none
 --num-fetch-threads 1 \
 --fetch-size 1048576 \
 --threads 10 \
---topic "test-1-3-50mil-007"
+--topic "test-1-6-50mil-010"
 
 
 
