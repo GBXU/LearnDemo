@@ -102,7 +102,7 @@ sogon KAFKA_HEAP_OPT="-Xmx30G"
 
 
 ### producer
-* 根据[这封邮件](https://mail-archives.apache.org/mod_mbox/kafka-users/201601.mbox/%3CCAE1jLMMb=NnRRfY9aynNNwy5uwffi8xKfr9TrtvBqG2J50exAQ@mail.gmail.com%3E)，得知kafka 0.9之后，不支持thread的配置，而需要multi process来运行。
+* 根据[这封邮件](https://mail-archives.apache.org/mod_mbox/kafka-users/201601.mbox/%3CCAE1jLMMb=NnRRfY9aynNNwy5uwffi8xKfr9TrtvBqG2J50exAQ@mail.gmail.com%3E)，得知kafka 0.9之后，不支持thread的配置，而需要multi process来运行。但是也有coder在[contribute](https://github.com/apache/kafka/pull/1399/commits)了。
 * 在AWS测试，出现存储不够的问题，重新买机器,8g变为16g，再跑。可以`df -h`查看目前存储情况。要考虑`50000000*128/1024/1024/1024 = 5.96 G`每次测试产生的数据量。
 
 ### consumer
