@@ -136,3 +136,8 @@ java client代码可以参考:
   `java -cp ".:../libs/*" com/exam/main/Main`
 
   java执行.class需要搜索.即本地目录。而linux下用:分开。java需要在package的目录，相对路径才能正确
+
+## maven 项目
+maven错误发现是1.0.0包本身有问题，在pom.xml更改为1.0.1后问题解决。
+### 创建 project
+创建project，修改pom.xml。右键把jre system library改为9.0.1,右键properties-java compiler改compiler compliance level为9。在src/main/java下创建com.exam.main包，创建Main.java，即可。
