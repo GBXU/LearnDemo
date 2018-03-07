@@ -124,9 +124,11 @@ java client代码可以参考:
 * http://orchome.com/303
 
 ### java client project出现的error及解决
-* maven配置java client project以为更方便，没想到它的maven缺少了个log4j的jar包，运行出错又没有说是这个包的问题。在国外论坛看到别人说创建java project把包一个个放进去可以用，才发现有warning提示这个log4j。目前还不清楚maven的解决方案。
+* maven配置java client project以为更方便，没想到它的maven缺少了个log4j的jar包，运行出错又没有说是这个包的问题。在国外论坛看到别人说创建java project把包一个个放进去可以用，才发现有warning提示这个log4j,然后也放到libs文件夹，再设置properties中的Java Build Path的Libraries即可，。目前还不清楚maven的解决方案。
 * terminal运行出错。正确命令如下：
 
   `javac -cp "libs/*" src/com/exam/main/Main.java -d bin/`
 
   `java -cp ".:../libs/*" com/exam/main/Main`
+
+  java执行.class需要搜索.即本地目录。而linux下用:分开。java需要在package的目录，相对路径才能正确
