@@ -38,39 +38,49 @@ zookeeper的配置要求参考[这处文档](https://zookeeper.apache.org/doc/cu
 
 ## 运行
 ### 启动
-* 启动zookeeper：所以节点
+* 启动zookeeper：所有节点
 ```shell
 ./zkServer.sh start
 ./zkServer.sh status
 ./zkServer.sh restart
 ```
-* 启动kafka：所以节点
+* 启动kafka：所有节点
 ```shell
 nohup ./kafka-server-start.sh -daemon ../config/server.properties >/dev/null 2>&1 &
 ./kafka-server-stop.sh
 ```
 * jps：jps命令可以查看当前java进程
 
+### 单机启动
+* 启动zookeeper：单机
+```shell
+./bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+* 启动kafka：所以节点
+```shell
+./bin/kafka-server-start.sh config/server.properties
+```
+
 ### 基本操作
 * 新建主题:创建的时候replication不能超过broker，partition无所谓
 ```shell
-./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic test
+./kafka-topics.sh --create --zookeeper node1:2181 --replication-factor 3 --partitions 3 --topic test
 ```
 * 查看主题
 ```shell
-./kafka-topics.sh --list --zookeeper node14:2181
+./kafka-topics.sh --list --zookeeper node1:2181
 ```
 * 主题详情
 ```shell
-./kafka-topics.sh --describe --zookeeper node14:2181 --topic test
+./kafka-topics.sh --describe --zookeeper node1:2181 --topic test
 ```
 * 创建发布者
 ```shell
-./kafka-console-producer.sh --broker-list node14:9092 --topic test
+./kafka-console-producer.sh --broker-list node1:9092 --topic test
 ```
 * 创建消费者
 ```shell
-./kafka-console-consumer.sh --bootstrap-server node14:9092 --topic test --from-beginning
+./kafka-console-consumer.sh --bootstrap-server node1:9092 --topic test --from-beginning
 ```
 * 删除主题：删除topic需要另外配置，可以参考[这篇帖子](http://blog.csdn.net/u010003835/article/details/53071882)。
 ```shell
@@ -115,7 +125,8 @@ java client代码可以参考:
 
 ### java client project出现的error及解决
 * maven配置java client project以为更方便，没想到它的maven缺少了个log4j的jar包，运行出错又没有说是这个包的问题。在国外论坛看到别人说创建java project把包一个个放进去可以用，才发现有warning提示这个log4j。目前还不清楚maven的解决方案。
-* terminal运行出错
+* terminal运行出错。正确命令如下：
 
-  `javac -cp .:/libs/* src/com/exam/main/Main.java`
-  `java -cp .:/libs/* bin/com/exam/main/Main`
+  `javac -cp "libs/*" src/com/exam/main/Main.java -d bin/`
+
+  `java -cp ".:../libs/*" com/exam/main/Main`
