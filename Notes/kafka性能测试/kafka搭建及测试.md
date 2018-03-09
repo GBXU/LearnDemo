@@ -141,3 +141,33 @@ java client代码可以参考:
 maven错误发现是1.0.0包本身有问题，在pom.xml更改为1.0.1后问题解决。
 ### 创建 project
 创建project，修改pom.xml。右键把jre system library改为9.0.1,右键properties-java compiler改compiler compliance level为9。在src/main/java下创建com.exam.main包，创建Main.java，即可。
+
+测试下述代码时，需要运行zookeeper、kafka，可同时打开一个consumer进行观察。
+```java
+package com.exam.main;
+
+import java.util.Properties;
+
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+
+public class Main {
+	public static void main(String[] args) {
+    	Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("acks", "all");
+        props.put("retries", 0);
+        props.put("batch.size", 16384);
+        props.put("linger.ms", 1);
+        props.put("buffer.memory", 33554432);
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+        Producer<String, String> producer = new KafkaProducer<>(props);
+        for(int i = 0; i < 100; i++)
+            producer.send(new ProducerRecord<>("test", Integer.toString(i), Integer.toString(i)));
+        producer.close();
+	}
+}
+```
