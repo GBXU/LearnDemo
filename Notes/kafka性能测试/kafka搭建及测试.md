@@ -35,7 +35,7 @@ zookeeper的配置要求参考[这处文档](https://zookeeper.apache.org/doc/cu
   参考[这里](http://blog.csdn.net/doctor_who2004/article/details/39567289)
 
 
-
+---
 ## 运行
 ### 启动
 * 启动zookeeper：所有节点
@@ -117,6 +117,8 @@ sogon KAFKA_HEAP_OPT="-Xmx30G"
 
 ### consumer
 
+待补充
+
 ---
 ## java client
 java client代码可以参考:
@@ -137,12 +139,22 @@ java client代码可以参考:
 
   java执行.class需要搜索.即本地目录。而linux下用:分开。java需要在package的目录，相对路径才能正确
 
+---
+
 ## maven 项目
 maven错误发现是1.0.0包本身有问题，在pom.xml更改为1.0.1后问题解决。
 ### 创建 project
-创建project，修改pom.xml。右键把jre system library改为9.0.1,右键properties-java compiler改compiler compliance level为9。在src/main/java下创建com.exam.main包，创建Main.java，即可。
-
-测试下述代码时，需要运行zookeeper、kafka，可同时打开一个consumer进行观察。
+* 创建project，根据该[文档](https://kafka.apache.org/documentation/#producerapi)修改pom.xml，添加如下依赖。
+```xml
+<dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>kafka-clients</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
+* 右键项目把jre system library改为9.0.1,
+* 右键properties-java compiler改compiler compliance level为9。*
+* 在src/main/java下创建com.exam.main包，创建Main.java，写入如下测试代码即可。
 ```java
 package com.exam.main;
 
@@ -171,3 +183,4 @@ public class Main {
 	}
 }
 ```
+* 测试代码时，需要运行zookeeper、kafka，可同时打开一个consumer进行观察。
