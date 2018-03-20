@@ -20,4 +20,12 @@ lsblk
 3 创建用户
 adduser gbxu
 passwd
-userdel gbxu 
+userdel gbxu
+
+4 XX-net
+sudo service miredo status
+sudo vim /etc/miredo/miredo.conf
+ps -ef | grep miredo
+kill -9 1234
+sudo service miredo restart
+sudo ./app/XX-Net/xx_net.sh start
